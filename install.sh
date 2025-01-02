@@ -61,17 +61,9 @@ check_token() {
   echo -e "${BLUE}[+]               LICENSY ZERONE OFFC             [+]${NC}"
   echo -e "${BLUE}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
-  TOKEN=$(jq -r '.token' token.json)
 
-  echo -e "${YELLOW}MASUKAN AKSES TOKEN :${NC}"
-  read -r USER_TOKEN
-
-  if [ "$USER_TOKEN" = "zerone" ]; then
-    echo -e "${GREEN}AKSES BERHASIL${NC}}"
-  else
-    echo -e "${GREEN}AKSES GAGAL${NC}"
-    exit 1
-  fi
+  # Skip the token validation and assume the user has permission
+  echo -e "${GREEN}AKSES BERHASIL${NC}"
   clear
 }
 
